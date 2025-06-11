@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Livro do Amor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffedf0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .page {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    .page.active {
+      display: flex;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    h1 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d81b60;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page active">
+    <h1>Era uma vez... nós dois 💕</h1>
+    <img src="fotos/foto1.jpeg" width="200"  alt="Nosso começo">
+    <p>O começo da nossa história que mudou tudo.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto2.jpeg" width="200"  alt="foto2">
+    <p>Mdss faz muito tempo, em 2018 tu me chamou no snap e disse que queria ser meu “melhor amigo” e confesso que fiquei chateada achando que tu só queria ser meu amigo🥹.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto3.jpg" width="200"  alt="foto3">
+    <p>Depois de um tempo a gente brigou e tu nunca mais me respondeu, fiquei muito triste porque tinha sido o primeiro menino que me chamava pra conversar assim.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto4.jpg" width="200"  alt="foto4">
+    <p>Mas aí em 2020 a gente começou a conversar direto e foi diferente, no fundo eu sempre queria tá falando contigo não sei porque demoramos tanto tempo pra perceber que a gente se gostava MUITOOO.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto6.jpg" width="200"  alt="foto6">
+    <p>Então no final do ano de 2020 vc comprou as alianças de namoro e não me entregou porque sofreu um acidente 🥲
+.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto7.jpg" width="200"  alt="foto7">
+    <p>E em janeiro fui te visitar na sua casa e vc me deu as alianças (detalhe importante é que a gente nunca se via e nunca tinha saído antes kkkkk).</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto8.jpg" width="200"  alt="foto8">
+    <p>A partir desse dia a minha vida mudou totalmente porque passou a ser eu e vc enfrentando todas as coisas difíceis .</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto9.jpg" width="200"  alt="foto9">
+    <p>Passamos o primeiro dia dos namorados juntinhos🥰.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto10.jpg" width="200"  alt="foto10">
+    <p>Fizemos vários passeios da hora.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto11.jpg" width="200"  alt="foto11">
+    <p>Descobrimos que amamos comer muito e amamos um docinho.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto12.jpg" width="200"  alt="foto12">
+    <p>Começamos a guardar dinheiro pra nossa casa e comprar coisinhas pra ela também.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto13.jpg" width="200"  alt="foto13">
+    <p>Muitas coisas aconteceram durante a esses 4 anos mas ser sua noiva com certeza foi a melhor e mais feliz de todas.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <img src="fotos/foto14.jpg" width="200"  alt="foto14">
+    <p>E agora estamos aqui no quinto dia dos namorados juntinhos planejando as coisas da nossa casinha, e no próximo estaremos nela e casados 😍.</p>
+    <button onclick="nextPage()">Próximo</button>
+  </div>
+
+  <div class="page">
+    <h1>Continua....</h1>
+    <p>Eu te amoo maior que o infinitoo.</p>
+    <button onclick="reiniciar()">Reiniciar</button>
+  </div>
+
+  <script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
+
+    function nextPage() {
+      pages[currentPage].classList.remove('active');
+      currentPage++;
+      if (currentPage < pages.length) {
+        pages[currentPage].classList.add('active');
+      }
+    }
+
+    function reiniciar() {
+      pages[currentPage].classList.remove('active');
+      currentPage = 0;
+      pages[currentPage].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
